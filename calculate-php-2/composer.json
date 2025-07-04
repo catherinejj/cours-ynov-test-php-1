@@ -17,5 +17,8 @@
     "friendsofphp/php-cs-fixer": "^3.76",
     "phpmd/phpmd": "^2.15",
     "behat/behat": "^3.22"
-    }
+    },
+  "require": {
+    "symfony/dom-crawler": "^7.3"
+  }
 }
