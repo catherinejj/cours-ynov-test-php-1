@@ -5,3 +5,6 @@
 **/.idea/
 **/.vscode/
 **/vendor/
+**/.phpunit.cache
+**/test-results
+**/.php-cs-fixer.cache
