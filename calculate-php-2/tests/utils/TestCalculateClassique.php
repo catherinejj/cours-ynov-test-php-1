@@ -6,13 +6,6 @@ use src\utils\CalculsClassique;
 class TestCalculsClassique extends TestCase
 {
     private CalculsClassique $calculsClassique;
-
-    // public function __construct(int $chiffre1, int $chiffre2)
-    // {
-    //     parent::__construct($chiffre1, $chiffre2);
-    //     $this->calculsClassique = new CalculsClassique();
-    // }
-
     protected function setUp(): void
     {
         $this->calculsClassique = new CalculsClassique();

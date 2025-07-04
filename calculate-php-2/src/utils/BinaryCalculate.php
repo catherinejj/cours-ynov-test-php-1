@@ -1,6 +1,6 @@
 <?php
 
-namespace Catherine\CalculatePhp1\utils;
+namespace src\utils;
 
 class BinaryCalculate
 {

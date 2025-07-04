@@ -1,7 +1,7 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use Catherine\CalculatePhp1\utils\BinaryCalculate;
+use src\utils\BinaryCalculate;
 
 class BinaryCalculateTest extends TestCase
 {
