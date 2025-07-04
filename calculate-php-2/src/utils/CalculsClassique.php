@@ -14,7 +14,14 @@ class CalculsClassique
 
     public function soustractionCalcul(int $a, int $b)
     {
+        $result = $a - $b;
+        return $result;
+    }
 
+    public function multiplicationCalcul(int $a, int $b)
+    {
+        $result = $a * $b;
+        return $result;
     }
 
     public function divisionCalcul(int $a, int $b)
@@ -26,6 +33,5 @@ class CalculsClassique
         $result = $a / $b;
         return $result;
     }
-
 
 }

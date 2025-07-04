@@ -1,28 +1,66 @@
 <?php
-include '.src/utils/BinaryCalculate.php';
+require_once __DIR__ . '/src/utils/BinaryCalculate.php';
+use src\utils\BinaryCalculate;
 
-$chiffreA = readline("Quel est votre premier chiffre : ");
-echo "Voici votre chiffre a : " . $chiffreA . PHP_EOL;
+$numA = '';
+$numB = '';
+$operateur = '';
+$resultat = null;
+$error = null;
 
-$chiffreB = readline("Quel est votre second chiffre : ");
-echo "Voici votre chiffre b : " . $chiffreB . PHP_EOL;
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $numA = isset($_POST['a']) ? (int)$_POST['a'] : null;
+    $numB = isset($_POST['b']) ? (int)$_POST['b'] : null;
+    $operateur = isset($_POST['op']) ? $_POST['op'] : 'and';
 
-$operation = readline("Quelle opération voulez-vous effectuer ? (and, or, xor) : ");
-echo "Opération choisie : " . $operation . PHP_EOL;
+    $calcul = new BinaryCalculate();
 
-$calcul = new BinaryCalculate();
-
-switch (strtolower($operation)) {
-    case 'and':
-        $calcul->andBinaryCalcul((int)$chiffreA, (int)$chiffreB);
-        break;
-    case 'or':
-        $calcul->orBinaryCalcul((int)$chiffreA, (int)$chiffreB);
-        break;
-    case 'xor':
-        $calcul->xorBinaryCalcul((int)$chiffreA, (int)$chiffreB);
-        break;
-    default:
-        echo "Opération non reconnue. Veuillez choisir 'and', 'or' ou 'xor'." . PHP_EOL;
-        break;
+    switch (strtolower($operateur)) {
+        case 'and':
+            $resultat = $calcul->andBinaryCalcul($numA, $numB);
+            break;
+        case 'or':
+            $resultat = $calcul->orBinaryCalcul($numA, $numB);
+            break;
+        case 'xor':
+            $resultat = $calcul->xorBinaryCalcul($numA, $numB);
+            break;
+        default:
+            $resultat = $calcul->andBinaryCalcul($numA, $numB);
+            break;
+    }
 }
+?>
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculatrice binaire</title>
+</head>
+<body>
+    <h1>Calculatrice binaire</h1>
+    <form method="post">
+        <label for="a">Selectionnez un premier chiffre :</label>
+        <input type="number" name="a" id="a" value="<?= htmlspecialchars($numA) ?>" required>
+
+        <label for="b">Votre second chiffre :</label>
+        <input type="number" name="b" id="b" value="<?= htmlspecialchars($numB) ?>" required>
+
+        <label for="op">Choisir un opérateur :</label>
+        <select name="op" id="op" required>
+            <option value="">Options</option>
+            <option value="and" <?= $operateur === 'and' ? 'selected' : '' ?>>AND</option>
+            <option value="or" <?= $operateur === 'or' ? 'selected' : '' ?>>OR</option>
+            <option value="xor" <?= $operateur === 'xor' ? 'selected' : '' ?>>XOR</option>
+        </select>
+
+        <button type="submit">Go !</button>
+    </form>
+
+    <?php if ($resultat !== null){ ?>
+        <p>Résultat de <?= htmlspecialchars($operateur) ?> entre <?= $numA ?> et <?= $numB ?> :<br><?= $resultat ?></p>
+        <p>Résultat en binaire : <?= decbin($resultat) ?></p>
+    <?php }; ?>
+</body>
+</html>
