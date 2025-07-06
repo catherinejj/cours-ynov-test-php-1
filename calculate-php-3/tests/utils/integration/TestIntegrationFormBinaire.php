@@ -1,9 +1,11 @@
 <?php
 
+namespace tests\utils\integration;
+
 use PHPUnit\Framework\TestCase;
 
-require_once __DIR__ . '/../../views/calculatriceBinaire.php';
-require_once __DIR__ . '/../../src/utils/BinaryCalculate.php';
+require_once __DIR__ . '/../../../views/calculatriceBinaire.php';
+require_once __DIR__ . '/../../../src/utils/BinaryCalculate.php';
 
 use views\FormBinaire;
 

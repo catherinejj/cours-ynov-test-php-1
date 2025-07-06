@@ -1,9 +1,11 @@
 <?php
 
+namespace tests\utils\integration;
+
 use PHPUnit\Framework\TestCase;
 
-require_once __DIR__ . '/../../views/calculatriceClassique.php';
-require_once __DIR__ . '/../../src/utils/CalculsClassique.php';
+require_once __DIR__ . '/../../../views/calculatriceClassique.php';
+require_once __DIR__ . '/../../../src/utils/CalculsClassique.php';
 
 use views\FormClassique;
 

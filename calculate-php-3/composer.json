@@ -1,9 +1,10 @@
 {
-  "name": "catherine/calculate-php-2",
   "autoload": {
-    "psr-4": {
-      "src\\": "src/"
-    }
+  "psr-4": {
+    "src\\": "src/",
+    "views\\": "views/",
+    "tests\\": "tests/"
+  }
   },
     "authors": [
         {

@@ -1,5 +1,7 @@
 <?php
 
+namespace tests\utils\unit;
+
 use PHPUnit\Framework\TestCase;
 use src\utils\BinaryCalculate;
 
