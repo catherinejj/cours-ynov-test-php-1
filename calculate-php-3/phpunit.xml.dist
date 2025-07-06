@@ -27,7 +27,8 @@
             <directory>tests/utils/BinaryCalculateTest.php</directory>
         </testsuite>
         <testsuite name="integration">
-            <directory>tests/utils/TestIntegrationCalculsClassiques.php</directory>
+            <directory>tests/utils/TestIntegrationFormBinaire.php</directory>
+            <directory>tests/utils/TestIntegrationCalculClassique.php</directory>
         </testsuite>
     </testsuites>
 

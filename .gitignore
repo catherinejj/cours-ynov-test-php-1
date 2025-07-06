@@ -1,10 +1,9 @@
 .DS_Store
-.idea/
 .vscode/
 **/.DS_Store
-**/.idea/
 **/.vscode/
 **/vendor/
 **/.phpunit.cache
 **/test-results
 **/.php-cs-fixer.cache
+**/.php-cs-fixer.dist.php
