@@ -1,51 +1,51 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-require_once __DIR__ . '/../views/calculatriceBinaire.php';
-require_once __DIR__ . '/../src/utils/BinaryCalculate.php';
+require_once __DIR__ . '/../../views/calculatriceBinaire.php';
+require_once __DIR__ . '/../../src/utils/BinaryCalculate.php';
 
 class TestIntegrationFormBinaire extends TestCase
 {
+    private \FormBinaire $form;
+
+    protected function setUp(): void
+    {
+        $this->form = new \FormBinaire(0, 0, 'and');
+    }
+
     public function testAndOperation()
     {
         // GIVEN
-        $post = [
-            'a' => 6,
-            'b' => 3,
-            'op' => 'and'
-        ];
-        $form = new \FormBinaire($post);
+        $this->form = new \FormBinaire(6, 3, 'and');
 
         // WHEN
-        $form->operateur();
+        $this->form->operateur();
 
         // THEN
-        $this->assertEquals(2, $form->getResult());
+        $this->assertEquals(2, $this->form->getResult());
     }
 
     public function testOrOperation()
     {
-        $post = [
-            'a' => 6,
-            'b' => 3,
-            'op' => 'or'
-        ];
-        $form = new \FormBinaire($post);
-        $form->operateur();
+        // GIVEN
+        $this->form = new \FormBinaire(6, 3, 'or');
 
-        $this->assertEquals(7, $form->getResult());
+        // WHEN
+        $this->form->operateur();
+
+        // THEN
+        $this->assertEquals(7, $this->form->getResult());
     }
 
     public function testXorOperation()
     {
-        $post = [
-            'a' => 6,
-            'b' => 3,
-            'op' => 'xor'
-        ];
-        $form = new \FormBinaire($post);
-        $form->operateur();
+        // GIVEN
+        $this->form = new \FormBinaire(6, 3, 'xor');
 
-        $this->assertEquals(5, $form->getResult());
+        // WHEN
+        $this->form->operateur();
+
+        // THEN
+        $this->assertEquals(5, $this->form->getResult());
     }
 }

@@ -7,11 +7,11 @@ class FormClassique
     public int $numA=0, $numB=0, $resultat =0;
     public string $operateur = '+';
 
-    public function __construct(array $post)
+    public function __construct(int $numA, int $numB, string $operateur)
     {
-        isset($_POST['a']) ? $this->numA = $_POST['a'] : null;
-        isset($_POST['b']) ? $this->numB = $_POST['b'] : null;
-        isset($_POST['op']) ? $this->operateur = $_POST['op'] :'+';
+        $this->numA = $numA;
+        $this->numB = $numB;
+        $this->operateur = $operateur;
     }
 
     public function operation(): void
@@ -53,7 +53,11 @@ class FormClassique
     }
 }
 
-$form = new FormClassique($_POST);
+$numA= isset($_POST['a']) ? (int)$_POST['a'] : 0;
+$numB= isset($_POST['b']) ? (int)$_POST['b'] : 0;
+$operateur= isset($_POST['op']) ? $_POST['op'] : 'and';
+
+$form = new FormClassique($numA, $numB, $operateur);
 $form->operation();
 ?>
 <!DOCTYPE html>
