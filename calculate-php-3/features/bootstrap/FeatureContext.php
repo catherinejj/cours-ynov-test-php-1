@@ -1,6 +1,8 @@
 <?php
 
 use Symfony\Component\DomCrawler\Crawler;
+use Symfony\Component\HttpClient\HttpClient;
+
 use Behat\Behat\Context\Context;
 use Behat\Gherkin\Node\PyStringNode;
 use Behat\Gherkin\Node\TableNode;
@@ -14,6 +16,8 @@ use Behat\Step\Then;
  */
 class FeatureContext implements Context
 {
+    
+    private Crawler $crawler;
     /**
      * Initializes context.
      *

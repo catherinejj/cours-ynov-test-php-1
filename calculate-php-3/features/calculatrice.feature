@@ -1,7 +1,7 @@
 Feature: Calculatrice Binaire
 
   Scenario: L'utilisateur calcule 4 AND 1
-    Given je suis sur "hhttp://localhost:8000"
+    Given je suis sur "http://localhost:8080/?page=binaire"
     And je remplis "a" avec "4"
     And je remplis "b" avec "1"
     And je sélectionne "and" dans "op"

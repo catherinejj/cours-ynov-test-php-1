@@ -5,7 +5,7 @@ VENDOR_BIN = vendor/bin
 all: stan test fix
 
 stan:
-	$(VENDOR_BIN)/phpstan analyse src tests
+	$(VENDOR_BIN)/phpstan analyse src tests views
 test:
 	$(VENDOR_BIN)/phpunit tests/utils
 fix:

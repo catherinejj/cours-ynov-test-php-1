@@ -1,8 +1,8 @@
 <?php
+namespace views;
 require_once __DIR__ . '/../src/utils/BinaryCalculate.php';
 
 use src\utils\BinaryCalculate;
-
 
 class FormBinaire
 {

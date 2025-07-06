@@ -1,21 +1,25 @@
 <?php
+
 use PHPUnit\Framework\TestCase;
+
 require_once __DIR__ . '/../../views/calculatriceClassique.php';
 require_once __DIR__ . '/../../src/utils/CalculsClassique.php';
 
+use views\FormClassique;
+
 class TestIntegrationCalculClassique extends TestCase
 {
-    private \FormClassique $form;
+    private FormClassique $form;
 
     protected function setUp(): void
     {
-        $this->form = new \FormClassique(0, 0, '+');
+        $this->form = new FormClassique(0, 0, '+');
     }
 
     public function testAdditionOperation()
     {
         // GIVEN
-        $this->form = new \FormClassique(6, 3, '+');
+        $this->form = new FormClassique(6, 3, '+');
 
         // WHEN
         $this->form->operation();
@@ -27,7 +31,7 @@ class TestIntegrationCalculClassique extends TestCase
     public function testSoustractionCalcul()
     {
         // GIVEN
-        $this->form = new \FormClassique(6, 3, '-');
+        $this->form = new FormClassique(6, 3, '-');
 
         // WHEN
         $this->form->operation();
@@ -39,7 +43,7 @@ class TestIntegrationCalculClassique extends TestCase
     public function testMultiplicationCalcul()
     {
         // GIVEN
-        $this->form = new \FormClassique(6, 3, '*');
+        $this->form = new FormClassique(6, 3, '*');
 
         // WHEN
         $this->form->operation();
@@ -51,7 +55,7 @@ class TestIntegrationCalculClassique extends TestCase
     public function testDivisionCalcul()
     {
         // GIVEN
-        $this->form = new \FormClassique(6, 3, '/');
+        $this->form = new FormClassique(6, 3, '/');
 
         // WHEN
         $this->form->operation();
