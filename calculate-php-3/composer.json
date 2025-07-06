@@ -19,6 +19,7 @@
     "behat/behat": "^3.22"
     },
   "require": {
-    "symfony/dom-crawler": "^7.3"
+    "symfony/dom-crawler": "^7.3",
+    "symfony/http-client": "^7.3"
   }
 }
