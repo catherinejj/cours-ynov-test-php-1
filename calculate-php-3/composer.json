@@ -3,7 +3,8 @@
   "psr-4": {
     "src\\": "src/",
     "views\\": "views/",
-    "tests\\": "tests/"
+    "tests\\": "tests/",
+    "features\\bootstrap\\": "features/bootstrap/"
   }
   },
     "authors": [

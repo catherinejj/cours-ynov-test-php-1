@@ -1,5 +1,5 @@
 <?php
-
+namespace features\bootstrap;
 use Symfony\Component\DomCrawler\Crawler;
 use Symfony\Component\BrowserKit\HttpBrowser;
 use Symfony\Component\HttpClient\HttpClient;
@@ -17,8 +17,7 @@ use Behat\Step\Then;
  */
 class FeatureContext implements Context
 {
-    private HttpBrowser $client;
-    private array $formData = []; 
+
     /**
      * Initializes context.
      *
@@ -28,61 +27,37 @@ class FeatureContext implements Context
      */
     public function __construct()
     {
-         $this->client = new HttpBrowser(HttpClient::create());
+         
     }
-    // --- FeatureContext has missing steps. Define them with these snippets:
-    #[Given('je suis sur :arg1')]
-    public function jeSuisSur($arg1): void
+    // --- features\bootstrap\FeatureContext has missing steps. Define them with these snippets:
+
+    #[Given('I have an instance of BinaryCalculate')]
+    public function iHaveAnInstanceOfBinarycalculate(): void
     {
-        $this->client->request('GET', 'http://localhost:8080' . $arg1);
-    }
-
-    #[When('je clique sur le lien :arg1')]
-    public function jeCliqueSurLeLien($arg1): void
-    {
-        $crawler = $this->client->getCrawler();
-
-        $link = $crawler->selectLink($arg1);
-        if ($link->count() === 0) {
-            throw new \Exception("il ne trouve pas '$arg1'");
-        }
-
-        $this->client->click($link->link());
+        throw new PendingException();
     }
 
-    #[When('je remplis :arg1 avec :arg2')]
-    public function jeRemplisAvec($champ, $valeur): void
+    #[When('I perform binary AND between :arg1 and :arg2')]
+    public function iPerformBinaryAndBetweenAnd($arg1, $arg2): void
     {
-        $this->formData[$champ] = $valeur;
+        throw new PendingException();
     }
 
-    #[When('je choisis :arg1 dans :arg2')]
-    public function jeChoisisDans($valeur, $champ): void
+    #[Then('the result should be :arg1')]
+    public function theResultShouldBe($arg1): void
     {
-        $this->formData[$champ] = $valeur;
+        throw new PendingException();
     }
 
-    #[When('je clique sur :arg1')]
-    public function jeCliqueSur($arg1): void
+    #[When('I perform binary OR between :arg1 and :arg2')]
+    public function iPerformBinaryOrBetweenAnd($arg1, $arg2): void
     {
-        $crawler = $this->client->getCrawler();
-        $button = $crawler->selectButton($arg1);
-
-        if ($button->count() === 0) {
-            throw new \Exception("Le bouton '$arg1' n'existe pas...");
-        }
-
-        $form = $button->form($this->formData);
-        $this->client->submit($form);
+        throw new PendingException();
     }
 
-    #[Then('je devrais voir :arg1')]
-    public function jeDevraisVoir($arg1): void
+    #[When('I perform binary XOR between :arg1 and :arg2')]
+    public function iPerformBinaryXorBetweenAnd($arg1, $arg2): void
     {
-        $html = $this->client->getResponse()->getContent();
-
-        if (strpos($html, $arg1) === false) {
-            throw new \Exception("Le texte '$arg1' n'existe pas ...");
-        }
+        throw new PendingException();
     }
 }
