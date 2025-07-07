@@ -5,7 +5,8 @@ use src\utils\CalculsClassique;
 
 class FormClassique
 {
-    public int $numA=0, $numB=0, $resultat =0;
+    public int $numA=0, $numB=0;
+    public float $resultat = 0.0;
     public string $operateur = '+';
 
     public function __construct(int $numA, int $numB, string $operateur)
@@ -49,7 +50,7 @@ class FormClassique
     public function getOperator(): string { 
         return $this->operateur; 
     }
-    public function getResult(): int {
+    public function getResult(): float {
          return $this->resultat; 
     }
 }
@@ -88,7 +89,7 @@ $form->operation();
     <button type="submit">Go !</button>
 </form>
 
-<?php if ($form->getResult() !== 0){ ?>
+<?php if (is_numeric($form->getResult())){ ?>
     <p>Résultat de <?= $form->getA() . ' ' . $form->getOperator() . ' ' . $form->getB() ?> = <strong><?= $form->getResult() ?></strong></p>
 <?php } ?>
 </body>

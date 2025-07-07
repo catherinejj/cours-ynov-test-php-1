@@ -58,7 +58,7 @@ $numB= isset($_POST['b']) ? (int)$_POST['b'] : 0;
 $operateur= isset($_POST['op']) ? $_POST['op'] : 'and';
 $resultat=0;
 
-$form = new FormBinaire($numA, $numB, $resultat, $operateur);
+$form = new FormBinaire($numA, $numB, $operateur);
 $form->operateur();
 ?>
 
