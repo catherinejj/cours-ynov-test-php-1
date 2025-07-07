@@ -24,24 +24,30 @@ class FeatureContext implements Context
      * You can also pass arbitrary arguments to the
      * context constructor through behat.yml.
      */
-    public function __construct()
+   public function __construct()
     {
     }
- //--- FeatureContext has missing steps. Define them with these snippets:
-
+   // --- FeatureContext has missing steps. Define them with these snippets:
+    
     #[Given('je suis sur :arg1')]
     public function jeSuisSur($arg1): void
     {
         throw new PendingException();
     }
 
-    #[Given('je remplis :arg1 avec :arg2')]
+    #[When('je clique sur le lien :arg1')]
+    public function jeCliqueSurLeLien($arg1): void
+    {
+        throw new PendingException();
+    }
+
+    #[When('je remplis :arg1 avec :arg2')]
     public function jeRemplisAvec($arg1, $arg2): void
     {
         throw new PendingException();
     }
 
-    #[Given('je choisis :arg1 dans :arg2')]
+    #[When('je choisis :arg1 dans :arg2')]
     public function jeChoisisDans($arg1, $arg2): void
     {
         throw new PendingException();
@@ -58,4 +64,5 @@ class FeatureContext implements Context
     {
         throw new PendingException();
     }
+ 
 }
