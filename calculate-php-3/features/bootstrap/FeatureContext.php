@@ -1,8 +1,5 @@
 <?php
 namespace features\bootstrap;
-use Symfony\Component\DomCrawler\Crawler;
-use Symfony\Component\BrowserKit\HttpBrowser;
-use Symfony\Component\HttpClient\HttpClient;
 
 use Behat\Behat\Context\Context;
 use Behat\Gherkin\Node\PyStringNode;
