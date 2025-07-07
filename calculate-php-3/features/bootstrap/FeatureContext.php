@@ -1,7 +1,6 @@
 <?php
 
 use Symfony\Component\DomCrawler\Crawler;
-use Symfony\Component\HttpClient\HttpClient;
 
 use Behat\Behat\Context\Context;
 use Behat\Gherkin\Node\PyStringNode;
@@ -28,7 +27,7 @@ class FeatureContext implements Context
     public function __construct()
     {
     }
-    //--- FeatureContext has missing steps. Define them with these snippets:
+ //--- FeatureContext has missing steps. Define them with these snippets:
 
     #[Given('je suis sur :arg1')]
     public function jeSuisSur($arg1): void
@@ -42,8 +41,8 @@ class FeatureContext implements Context
         throw new PendingException();
     }
 
-    #[Given('je sélectionne :arg1 dans :arg2')]
-    public function jeSélectionneDans($arg1, $arg2): void
+    #[Given('je choisis :arg1 dans :arg2')]
+    public function jeChoisisDans($arg1, $arg2): void
     {
         throw new PendingException();
     }
