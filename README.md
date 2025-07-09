@@ -10,6 +10,21 @@ Pour un cours sur les tests, il a fallu réaliser 4 exercices :
 - Un exercice de **TDD** (Test-Driven Development)
 - Des **tests end-to-end**
 
+## ⚠️ À propos du TDD
+Ce devoir est solo MAIS j'ai fiat l'exercice de TDD trinôme avec Angie et Julien.
+Nous avons respecté la méthode TDD (Test-Driven Development) en écrivant les tests en premier, avec des méthodes vides ou incomplètes, puis en complétant les méthodes uniquement pour faire passer les tests.
+
+Vous pouvez retrouver cette démarche dans les fichiers suivants :
+
+CalculsClassique.php (classe contenant les méthodes implémentées progressivement)
+
+TDDTestCalculateClassique.php (anciennement un test unitaire, renommé le 7 juillet pour bien montrer notre démarche TDD)
+
+Dans ce fichier renommé, on peut encore voir une trace d’erreur volontairement provoquée, conformément à l’étape Red de la méthode TDD.
+
+J'ai recommencé la calculatrice le 6 juillet.
+Merci de prendre cela en compte pour l’évaluation.
+
 ## Outils et configuration
 
 - **PHPUnit** : pour les tests unitaires et d’intégration  

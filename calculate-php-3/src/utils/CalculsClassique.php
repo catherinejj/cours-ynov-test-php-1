@@ -27,6 +27,7 @@ class CalculsClassique
     public function divisionCalcul(int $a, int $b)
     {
         if ($b === 0) {
+            //Note pour le professeur : J'ai fait le TDD avec Angie et Julien donc on a créé l'erreur ici :
             $error = "impossible de diviser par zéro";
             return $error;
         }

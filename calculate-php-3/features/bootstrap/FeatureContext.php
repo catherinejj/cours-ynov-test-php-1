@@ -1,9 +1,8 @@
 <?php
+
 namespace features\bootstrap;
 
 use Behat\Behat\Context\Context;
-use Behat\Gherkin\Node\PyStringNode;
-use Behat\Gherkin\Node\TableNode;
 use Behat\Behat\Tester\Exception\PendingException;
 use Behat\Step\Given;
 use Behat\Step\When;
@@ -14,7 +13,6 @@ use Behat\Step\Then;
  */
 class FeatureContext implements Context
 {
-
     /**
      * Initializes context.
      *
@@ -24,7 +22,7 @@ class FeatureContext implements Context
      */
     public function __construct()
     {
-         
+
     }
     // --- features\bootstrap\FeatureContext has missing steps. Define them with these snippets:
 

@@ -1,11 +1,14 @@
 <?php
+
 namespace views;
+
 require_once __DIR__ . '/../src/utils/CalculsClassique.php';
 use src\utils\CalculsClassique;
 
 class FormClassique
 {
-    public int $numA=0, $numB=0;
+    public int $numA = 0;
+    public int $numB = 0;
     public float $resultat = 0.0;
     public string $operateur = '+';
 
@@ -41,23 +44,26 @@ class FormClassique
     }
 
     public function getA(): int
-    { 
-        return $this->numA; 
+    {
+        return $this->numA;
     }
-    public function getB(): int{ 
-        return $this->numB; 
+    public function getB(): int
+    {
+        return $this->numB;
     }
-    public function getOperator(): string { 
-        return $this->operateur; 
+    public function getOperator(): string
+    {
+        return $this->operateur;
     }
-    public function getResult(): float {
-         return $this->resultat; 
+    public function getResult(): float
+    {
+        return $this->resultat;
     }
 }
 
-$numA= isset($_POST['a']) ? (int)$_POST['a'] : 0;
-$numB= isset($_POST['b']) ? (int)$_POST['b'] : 0;
-$operateur= isset($_POST['op']) ? $_POST['op'] : 'and';
+$numA = isset($_POST['a']) ? (int)$_POST['a'] : 0;
+$numB = isset($_POST['b']) ? (int)$_POST['b'] : 0;
+$operateur = isset($_POST['op']) ? $_POST['op'] : 'and';
 
 $form = new FormClassique($numA, $numB, $operateur);
 $form->operation();
@@ -89,7 +95,7 @@ $form->operation();
     <button type="submit">Go !</button>
 </form>
 
-<?php if (is_numeric($form->getResult())){ ?>
+<?php if (is_numeric($form->getResult())) { ?>
     <p>Résultat de <?= $form->getA() . ' ' . $form->getOperator() . ' ' . $form->getB() ?> = <strong><?= $form->getResult() ?></strong></p>
 <?php } ?>
 </body>

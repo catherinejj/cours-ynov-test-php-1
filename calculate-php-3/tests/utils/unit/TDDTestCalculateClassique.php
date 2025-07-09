@@ -28,7 +28,6 @@ class TestCalculsClassique extends TestCase
         $this->assertEquals($expectedResult, $actualResult);
     }
 
-
     //DIVISION
     public function testDivisionCalculIsValid()
     {
@@ -49,6 +48,7 @@ class TestCalculsClassique extends TestCase
         //GIVEN
         $chiffre1 = 9;
         $chiffre2 = 0;
+        //Note pour le professeur : J'ai fait le TDD avec Angie et Julien donc on a créé l'erreur ici :
         $expectedResult = "impossibledediviserparzéro";
 
         //WHEN

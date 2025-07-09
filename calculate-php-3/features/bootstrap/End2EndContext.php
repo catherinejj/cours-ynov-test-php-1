@@ -1,13 +1,11 @@
 <?php
+
 namespace features\bootstrap;
-use Symfony\Component\DomCrawler\Crawler;
+
 use Symfony\Component\BrowserKit\HttpBrowser;
 use Symfony\Component\HttpClient\HttpClient;
 
 use Behat\Behat\Context\Context;
-use Behat\Gherkin\Node\PyStringNode;
-use Behat\Gherkin\Node\TableNode;
-use Behat\Behat\Tester\Exception\PendingException;
 use Behat\Step\Given;
 use Behat\Step\When;
 use Behat\Step\Then;
@@ -16,11 +14,10 @@ use Behat\Step\Then;
  * Defines application features from the specific context.
  */
 
-
 class End2EndContext implements Context
 {
     private HttpBrowser $client;
-    private array $formData = []; 
+    private array $formData = [];
     /**
      * Initializes context.
      *
@@ -30,7 +27,7 @@ class End2EndContext implements Context
      */
     public function __construct()
     {
-         $this->client = new HttpBrowser(HttpClient::create());
+        $this->client = new HttpBrowser(HttpClient::create());
     }
     // --- FeatureContext has missing steps. Define them with these snippets:
     #[Given('je suis sur :arg1')]
