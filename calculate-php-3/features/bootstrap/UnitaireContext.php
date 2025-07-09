@@ -2,6 +2,7 @@
 
 namespace features\bootstrap;
 
+use src\utils\BinaryCalculate;
 use Behat\Behat\Context\Context;
 use Behat\Behat\Tester\Exception\PendingException;
 use Behat\Step\Given;
@@ -11,8 +12,11 @@ use Behat\Step\Then;
 /**
  * Defines application features from the specific context.
  */
-class FeatureContext implements Context
+class UnitaireContext implements Context
 {
+    
+    private BinaryCalculate $calculator;
+    private int $result;
     /**
      * Initializes context.
      *
@@ -22,37 +26,26 @@ class FeatureContext implements Context
      */
     public function __construct()
     {
-
+        //$this->calculator = new BinaryCalculate();
     }
-    // --- features\bootstrap\FeatureContext has missing steps. Define them with these snippets:
+    //features\bootstrap\FeatureContext a des étapes manquantes. Définissez-les avec les modèles suivants :
 
     #[Given('I have an instance of BinaryCalculate')]
     public function iHaveAnInstanceOfBinarycalculate(): void
     {
-        throw new PendingException();
+        $this->calculator = new BinaryCalculate();
     }
 
     #[When('I perform binary AND between :arg1 and :arg2')]
     public function iPerformBinaryAndBetweenAnd($arg1, $arg2): void
     {
-        throw new PendingException();
+        $this->result = $this->calculator->andBinaryCalcul((int)$arg1, (int)$arg2);
     }
 
     #[Then('the result should be :arg1')]
     public function theResultShouldBe($arg1): void
     {
-        throw new PendingException();
-    }
-
-    #[When('I perform binary OR between :arg1 and :arg2')]
-    public function iPerformBinaryOrBetweenAnd($arg1, $arg2): void
-    {
-        throw new PendingException();
-    }
-
-    #[When('I perform binary XOR between :arg1 and :arg2')]
-    public function iPerformBinaryXorBetweenAnd($arg1, $arg2): void
-    {
-        throw new PendingException();
-    }
-}
+        if ($this->result !== (int)$arg1) {
+            throw new \Exception("Expected result to be $arg1 but got $this->result");
+        }
+    }}

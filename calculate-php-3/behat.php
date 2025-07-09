@@ -1,6 +1,6 @@
 <?php
 
-use features\bootstrap\FeatureContext;
+use features\bootstrap\UnitaireContext;
 use features\bootstrap\End2EndContext;
 use Behat\Config\Config;
 use Behat\Config\Profile;
@@ -10,7 +10,7 @@ $profile = (new Profile('default'))
     ->withSuite(
         (new Suite('integration'))
             ->withPaths('%paths.base%/features')
-            ->withContexts(FeatureContext::class)
+            ->withContexts(UnitaireContext::class)
     )
     ->withSuite(
         (new Suite('end2end'))
